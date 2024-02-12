@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicianship Trainer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*background-color: #f9f9f9;*/
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+
+        table {
+            margin: 0 auto; /* Center the table horizontally within the body */
+        }
+
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bullet-point {
+            padding: 0;
+            display: block;
+        }
+    </style>
+    <script>
+        function isNotInIframe() {
+            return !(window.self === window.top);
+        }
+
+        function checkIFrame() {
+            var shouldDisplay = isNotInIframe();
+            document.getElementById("notIfIFrame").style.display = shouldDisplay ? "bullet-point" : "none";
+        }
+    </script>
+</head>
+
+<body onload="checkIFrame()">
+
+<h2 style="color: teal;">Musicianship Trainer</h2>
+<p>Musicianship Trainer is a new interactive app designed to significantly reduce the workload of music teachers who use the NZMEB exam syllabus and to enhance the musicianship skills of their students. </p>
+        
+<span id="notIfIFrame" class="bullet-point">• NZMEB endorsed and available on the NZMEB website</span>
+<span class="bullet-point">• Currently available for Grades 1, 2 and 3 piano on Apple iPad and iPhone</span>
+<span class="bullet-point">• Practice Mode includes practice tips, many examples and feedback </span>
+<span class="bullet-point">• Exam Mode includes a large number of mock exams delivered in the style of your on-the-day examiner</span>
+<span class="bullet-point">• Instructions and student video demonstrations for two age brackets: 5-10 years (with parent help sections) and 11-plus years</span>
+<span class="bullet-point">• Free licensing for NZMEB teachers </span>
+
+<br>
+<p>View the <a href="https://storage.googleapis.com/musicianship_trainer/PromoVideos/MT-Promo-5.mp4" target="_blank">Musicianship Trainer Promotional Video</a></p>
+
+<br>
+<img src="./app_background_1_10.png" class="center-image" width="300">
+</br>
+<!--
+<table>
+<tr>
+    <td>Download on the App Store</td>
+    <td><a href="https://apps.apple.com/app/Musicianship-Trainer/id6474898523">
+        <img src="./Download_on_the_App_Store_Badge_Black.svg" alt="Image">
+    </a>
+    </td>
+</tr>
+</table>
+-->
+
+<a href="https://www.musicmastereducation.co.nz/support.html">More information and any questions answered</a>   
+<p>Email : sales@musicmastereducation.co.nz</p>
+
+
+</body>
+</html>
