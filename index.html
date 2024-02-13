@@ -32,28 +32,18 @@
 									</ul>
 								</header>
 
-							<!-- Banner -->
+							<!--Content -->
 								<section id="banner">
 									<div class="content">
-										<header>
-											<h1>Hi, I’m Editorial<br />
-											by HTML5 UP</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
-									</span>
+										<!-- <a href="#" id="loadContent">...++ Load Content</a> -->
+										<div id="contentArea">This area will be updated with content.</div>
 								</section>
 
 						</div>
 					</div>
 
 				<!-- Sidebar -->
+
 					<div id="sidebar">
 						<div class="inner">
 
@@ -89,7 +79,7 @@
 										<li>
 											<span class="opener">Musicianship Trainer</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#" id="loadContent">... Load Content</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
 											</ul>
 										</li>
@@ -103,44 +93,7 @@
 
 									</ul>
 								</nav>
-								 
-							<!-- 
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
 
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-							-->
 							<!-- Footer -->
 								<footer id="footer">
 									<p class="copyright">&copy; 2024 Musicmaster Education LLC. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
@@ -158,5 +111,24 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script src="menuload.js"></script>
+			<script>
+				console.log('The DOM has been fully loaded');
+				fetch('mme.html')
+					.then(function(response) {
+						if (!response.ok) {
+							throw new Error('Network response was not ok');
+						}
+						return response.text(); // Convert the response to text
+					})
+					.then(function(data) {
+						// Update the content area with the fetched content
+						document.getElementById('contentArea').innerHTML = data;
+						console.log('Content  ====+++=== found ok');
+					})
+					.catch(function(error) {
+						console.error('There has been a problem with your fetch operation:', error);
+					});
+			</script>
 	</body>
 </html>
