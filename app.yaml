@@ -1,12 +1,19 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: nodej20 # Or another suitable runtime based on any server-side preferences or requirements
 
 handlers:
-- url: /
-  static_files: index.html
+- url: / # Root URL
+  static_files: index.html # Assuming you have an index.html file for the root
   upload: index.html
 
-- url: /(.*)
+- url: /(.*\.(html)) # To serve other HTML files at their respective paths
   static_files: \1
-  upload: (.*)
+  upload: .*\.(html)
+
+- url: /(.*\.(css|js|jpg|png|gif|svg))$ # For serving CSS, JS, and image files
+  static_files: \1
+  upload: .*\.(css|js|jpg|png|gif|svg)$
+
+- url: /(.*)/ # This is to ensure that paths ending with a slash also serve an HTML file if available
+  static_files: \1/index.html
+  upload: .*/index.html
+  secure: always # Optional: Forces HTTPS for all requests

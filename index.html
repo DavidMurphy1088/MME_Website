@@ -36,7 +36,7 @@
 								<section id="banner">
 									<div class="content">
 										<!-- <a href="#" id="loadContent">...++ Load Content</a> -->
-										<div id="contentArea">This area will be updated with content.</div>
+										<p id="contentArea">This area will be updated with content.</p>
 								</section>
 
 						</div>
@@ -79,12 +79,18 @@
 										<li>
 											<span class="opener">Musicianship Trainer</span>
 											<ul>
-												<li><a href="#" id="loadContent">... Load Content</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#" id="mt_introduction">Introduction</a></li>
+												<li><a href="#">Visual Intervals</a></li>
+												<li><a href="#">Clapping a Rhythm</a></li>
+												<li><a href="#">Sight Reading</a></li>
+												<li><a href="#">Aural Intervals</a></li>
+												<li><a href="#">Echo Clap a Rhythm</a></li>
+
+
 											</ul>
 										</li>
 										<li>
-											<span class="opener">Scale Trainer</span>
+											<span class="opener">Scales Trainer</span>
 											<ul>
 												<li><a href="#">Lorem Dolor</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
@@ -113,22 +119,8 @@
 
 			<script src="menuload.js"></script>
 			<script>
-				console.log('The DOM has been fully loaded');
-				fetch('mme.html')
-					.then(function(response) {
-						if (!response.ok) {
-							throw new Error('Network response was not ok');
-						}
-						return response.text(); // Convert the response to text
-					})
-					.then(function(data) {
-						// Update the content area with the fetched content
-						document.getElementById('contentArea').innerHTML = data;
-						console.log('Content  ====+++=== found ok');
-					})
-					.catch(function(error) {
-						console.error('There has been a problem with your fetch operation:', error);
-					});
+				console.log('The DOM has been fully loaded.....call load content');
+				fetchAndLoadContent('mme.html', 'contentArea')
 			</script>
 	</body>
 </html>
