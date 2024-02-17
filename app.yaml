@@ -1,4 +1,4 @@
-runtime: nodej20 # Or another suitable runtime based on any server-side preferences or requirements
+runtime: python311 # Or another suitable runtime based on any server-side preferences or requirements
 
 handlers:
 - url: / # Root URL
