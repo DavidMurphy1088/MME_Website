@@ -31,22 +31,33 @@
         }
     </style>
     <script>
-        function isNotInIframe() {
-            return !(window.self === window.top);
-        }
+        window.onload = function() {
+            // Check if the current page is loaded inside an iframe
+            if (window !== top) {
+                // If inside an iframe, hide the span element
+                var element = document.getElementById("notIfIFrame");
+                if (element) {
+                    element.style.display = "none";
+                    console.log("This page --is inside -- an iframe.");
+                }
+                else {
+                    console.log("This page NOT INSIDE an iframe.");
+                }
+            }
+            else {
+                console.log("outside top, ouitside iFrame.");
+            }
 
-        function checkIFrame() {
-            var shouldDisplay = isNotInIframe();
-            document.getElementById("notIfIFrame").style.display = shouldDisplay ? "bullet-point" : "none";
-        }
+        };
     </script>
+
 </head>
 
-<body onload="checkIFrame()">
+<body>
 
 <h2 style="color: teal;">Musicianship Trainer</h2>
 <p>Musicianship Trainer is a new interactive app designed to significantly reduce the workload of music teachers who use the NZMEB exam syllabus and to enhance the musicianship skills of their students. </p>
-        
+
 <span id="notIfIFrame" class="bullet-point">• NZMEB endorsed and available on the NZMEB website</span>
 <span class="bullet-point">• Currently available for Grades 1, 2 and 3 piano on Apple iPad and iPhone</span>
 <span class="bullet-point">• Practice Mode includes practice tips, many examples and feedback </span>
@@ -60,17 +71,6 @@
 <br>
 <img src="./app_background_1_10.png" class="center-image" width="300">
 </br>
-<!--
-<table>
-<tr>
-    <td>Download on the App Store</td>
-    <td><a href="https://apps.apple.com/app/Musicianship-Trainer/id6474898523">
-        <img src="./Download_on_the_App_Store_Badge_Black.svg" alt="Image">
-    </a>
-    </td>
-</tr>
-</table>
--->
 
 <a href="https://www.musicmastereducation.co.nz/support.html">More information and any questions answered</a>   
 <p>Email : sales@musicmastereducation.co.nz</p>
